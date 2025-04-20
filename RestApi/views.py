@@ -15,3 +15,6 @@ class IndexTemplateView(TemplateView):
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+
+class TeamListView(TemplateView):
+    template_name = 'team.html'

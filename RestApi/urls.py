@@ -7,4 +7,5 @@ app_name = 'RestApi'
 urlpatterns = [
     path('', IndexTemplateView.as_view(), name='index'),
     path('api/', include('RestApi.urls_api')),
+    path('team/', views.TeamListView.as_view(), name='team'),
 ]
