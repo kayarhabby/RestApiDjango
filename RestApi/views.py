@@ -9,9 +9,9 @@ from .serializers import TeamSerializer
 
 # Create your views here.
 
+class IndexTemplateView(TemplateView):
+    template_name = 'index.html'
+
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
-
-class IndexTemplateView(TemplateView):
-    template_name = 'index.html'
