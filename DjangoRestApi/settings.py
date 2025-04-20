@@ -146,3 +146,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# REST Framework settings
+#REST_FRAMEWORK = {
+#    'DEFAULT_RENDERER_CLASSES': [
+#        'rest_framework.renderers.JSONRenderer',
+#        'rest_framework.renderers.BrowsableAPIRenderer',
+#    ]
+#}
