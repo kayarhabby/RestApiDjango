@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block title %} Rest API {% endblock %}
+
+{% block content %}
+    <h1>Rest API</h1>
+    <p>Welcome to the Rest API documentation.</p>
+
+    <h2>Available Endpoints</h2>
+    <ul>
+        <li><a href="#">Team List</a></li>
+    </ul>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

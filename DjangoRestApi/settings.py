@@ -41,8 +41,15 @@ INSTALLED_APPS = [
     'rest_framework_gis',
     'django.contrib.gis',
     'RestApi.apps.RestapiConfig',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'debug_toolbar'
+
 ]
+
+# Crispy Forms settings
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+
 ]
 
 ROOT_URLCONF = 'DjangoRestApi.urls'
