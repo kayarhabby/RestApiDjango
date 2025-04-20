@@ -22,7 +22,7 @@ from django.urls import path, include
 import debug_toolbar
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/", include('RestApi.urls')),
+    path("", include('RestApi.urls')),
 ]
 
 # Serve media files in development
