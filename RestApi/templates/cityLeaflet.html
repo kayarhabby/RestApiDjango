@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    {% load static %}
+    {% load crispy_forms_tags %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block title %} Map of Cities {% endblock %}
+
+{% block content %}
+
+     <h1>Carte interactive des villes</h1>
+ <div id="map" style="height: 500px;"></div>
+<div id="city-info"></div>
+
+
+{% endblock %}
+
+{% block scripts %}
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="{% static 'js/city.js' %}"></script>
+{% endblock %}
