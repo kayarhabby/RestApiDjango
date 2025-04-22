@@ -22,7 +22,6 @@ admin.site.register(Team, TeamAdmin)
 
 
 class CityAdmin(admin.ModelAdmin):
-    form = CityForm
     list_display = ('name', 'population', 'location', 'created_at')
     search_fields = ('name',)
     list_filter = ('created_at',)

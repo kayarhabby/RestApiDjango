@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'RestApi.apps.RestapiConfig',
     'faker',
+    'vectortiles',
     'crispy_forms',
     'crispy_bootstrap5',
     'debug_toolbar'
@@ -51,6 +52,10 @@ INSTALLED_APPS = [
 # Crispy Forms settings
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+# Vector Tiles settings
+VECTOR_TILES_BACKEND = "vectortiles.backends.python"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

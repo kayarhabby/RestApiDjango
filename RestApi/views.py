@@ -4,8 +4,10 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 from rest_framework import viewsets, request, status, generics
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
+from vectortiles.rest_framework.renderers import MVTRenderer
+from vectortiles.views import BaseVectorTileView
 
 from .models import Team, City, Road, Book, Author, RoadSegment
 from .serializers import TeamSerializer, CitySerializer, RoadSerializer, BookSerializer, AuthorSerializer
@@ -94,3 +96,13 @@ class AuthorListCreateView(generics.ListCreateAPIView):
 class AuthorRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
+
+# City model tile
+class CityTileViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = City.objects.all()
+    id = "cities"
+    tile_fields = ("name", "population")
+    queryset_limit = 500
+
+class CityTileView(TemplateView):
+    template_name = 'cityTile.html'
