@@ -11,4 +11,12 @@ urlpatterns = [
     path('cityLeaflet/', views.CityLeafletView.as_view(), name='cityLeaflet'),
     path('cityMapLibre/', views.CityMapLibreView.as_view(), name='cityMapLibre'),
     path('segmentRoutier/', views.RoadSegmentTemplateView.as_view(), name='segmentRoutier'),
+
+    path('books/', views.book_list, name='book-list'),
+    path('books/<int:pk>/', views.book_detail, name='book-detail'),
+
+    path('authors/', views.AuthorListCreateView.as_view(), name='author-list'),
+    path('authors/<int:pk>/', views.AuthorRetrieveUpdateDestroyView.as_view(), name='author-detail'),
+
+
 ]

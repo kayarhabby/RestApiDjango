@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework_gis',
     'django.contrib.gis',
     'RestApi.apps.RestapiConfig',
+    'faker',
     'crispy_forms',
     'crispy_bootstrap5',
     'debug_toolbar'

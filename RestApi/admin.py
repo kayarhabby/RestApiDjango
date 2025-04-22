@@ -3,7 +3,7 @@ from django.utils.safestring import mark_safe
 from .forms import CityForm, RoadForm
 
 # Register your models here.
-from RestApi.models import Team, City, Road, RoadSegment
+from RestApi.models import Team, City, Road, RoadSegment, Author, Book
 
 class TeamAdmin(admin.ModelAdmin):
     list_display = ('name', 'created_at')
@@ -72,3 +72,14 @@ class RoadSegmentAdmin(admin.ModelAdmin):
 
 admin.site.register(RoadSegment, RoadSegmentAdmin)
 
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email')
+    search_fields = ('name',)
+    ordering = ('name',)
+admin.site.register(Author, AuthorAdmin)
+
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'published_date', 'isbn')
+    search_fields = ('title', 'author__name')
+    ordering = ('-published_date',)
+admin.site.register(Book, BookAdmin)

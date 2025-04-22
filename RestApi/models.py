@@ -39,3 +39,22 @@ class RoadSegment(models.Model):
 
     def __str__(self):
         return f"{self.road.name} [{self.start_km} km → {self.end_km} km] - {self.status}"
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    bio = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='books')
+    published_date = models.DateField()
+    isbn = models.CharField(max_length=13, unique=True)
+
+    def __str__(self):
+        return self.title
+
